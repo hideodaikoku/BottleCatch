@@ -37,6 +37,6 @@ function runlogic() {
 }
 
 function loadVideo(filePath, choice){
-    // use provided filePath to change file path
-    // use the number from the choice variable to change the valiue of the choice variable
+    canvas = filePath// use provided filePath to change file path
+    choices = button[choice]// use the number from the choice variable to change the valiue of the choice variable
 }
