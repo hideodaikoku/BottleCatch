@@ -1,63 +1,80 @@
-let item="";
-function WakeUp() {
-    let place= "";
-    let sleep = document.getElementById("lol").value;
-    if(sleep === "Try to sleep") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML=place;
-
-    }
+// take the flow chart and number the possible outcomes.
+// then reorder the items in video_files, video_titles and options according to the list items
+// make sure the links and buttons are in the correct order of your case logic
 
 
-    else if(sleep === "Go anyways") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML=place;
+var video_files=["/ZwDvSS58WoU","/oWSSxPIqFQ0","/jhLoQcw5iO8","/dWwc8sevzzo","/FNyVagkTEWM","/3DgbYrKrOo0","/Q1XdYl8IXxE","/4umUWjQ5geM","/pqvQEL5j6KI","/SO7S3M0VHaU","/0KoIGFaM1zM"];
+var video_titles=["Get text","Going back to sleep","Saizeriya Bottle","Saizeriya","MonssterAttack02","MonsterAttack","Throwing Bottle Away","Litter","Keep Bottle","Buying Water","Bottle Decision"];
+var options =[];
+
+var item=false;
+
+var answer;
+var canvas = document.getElementById("video-player");
+var button = document.getElementById("choice");
+
+function main(){
+    answer=document.getElementById('option').value;
+    runLogic();
+}
+
+function writeOptions(position){
+    button.innerHTML=options[position];
+}
+
+function renderVideo(position){
+    canvas.innerHTML='<iframe width="560" height="315" src="https://www.youtube.com/embed'+ video_files[position]+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+}
+
+function runLogic(){
+    switch(answer){
+        case 1:
+            renderVideo(1);
+            writeOptions(1);
+        break;
+
+        case 2:
+            renderVideo(2);
+            writeOptions(2);
+        break;
+        case 3:
+            renderVideo(3);
+            writeOptions(3);
+        break;
+        case 4:
+            renderVideo(4);
+            writeOptions(4);
+        break;
+        case 5:
+            renderVideo(5);
+            writeOptions(5);
+        break;
+        case 6:
+            renderVideo(6);
+            writeOptions(6);
+        break;
+        case 7:
+            renderVideo(7);
+            writeOptions(7);
+        break;
+        case 8:
+            renderVideo(8);
+            writeOptions(8);
+        break;
+        case 9:
+            renderVideo(9);
+            writeOptions(9);
+        break;
+        case 10:
+            renderVideo(9);
+            writeOptions(9);
+        break;
+        default:
+            renderVideo(0);
+            writeOptions(0);
+        break;
 
     }
 }
-function Gypsy() {
-    let place= "";
-    let erik = document.getElementById("lol1").value;
-    if (erik === "Stop and listen") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML=place;
-    }
 
-    else if(erik === "RUN AWAY") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML=place;
 
-    }
-}
-function Bottle() {
-    let place= "";
-    let water = document.getElementById( "lol2").value;
-    if (water === "Throw bottle on street") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML=place;
-    }
-
-    else if (water === "Throw bottle into the trash can") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML = place;
-        item = "false"
-    }
-    else if (water === "Keep bottle")  {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML = place;
-        item = "true"
-    }
-}
-function Monster() {
-    let place = "";
-    let minsung = document.getElementById("lol3")
-    if (item === "true") {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML = place;
-    } else (item === "false")
-    {
-        place = "<iframe width=\"768\" height=\"432\" src=\"https://www.youtube.com/embed/ZwDvSS58WoU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        document.getElementById("videoplace").innerHTML = place;
-    }
-
-}
