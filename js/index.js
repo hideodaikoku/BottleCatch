@@ -5,7 +5,9 @@
 
 var video_files=["/ZwDvSS58WoU","/oWSSxPIqFQ0","/jhLoQcw5iO8","/dWwc8sevzzo","/FNyVagkTEWM","/3DgbYrKrOo0","/Q1XdYl8IXxE","/4umUWjQ5geM","/pqvQEL5j6KI","/SO7S3M0VHaU","/0KoIGFaM1zM"];
 var video_titles=["Get text","Going back to sleep","Saizeriya Bottle","Saizeriya","MonssterAttack02","MonsterAttack","Throwing Bottle Away","Litter","Keep Bottle","Buying Water","Bottle Decision"];
-var options =[];
+
+var options =[   '<button style="height:30px" class="left-button" onclick="main(0)">Try Going Back To Sleep</button><button style="height:30px" class="right-button" onclick="main(1)">Go To Saizeriya Anyways</button>',
+];
 
 var item=false;
 
@@ -24,6 +26,7 @@ function writeOptions(position){
 
 function renderVideo(position){
     canvas.innerHTML='<iframe width="560" height="315" src="https://www.youtube.com/embed'+ video_files[position]+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    return;
 }
 
 function runLogic(){
@@ -31,6 +34,11 @@ function runLogic(){
         case 1:
             renderVideo(1);
             writeOptions(1);
+            document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+            function myHandler(e) {
+            renderVideo(3)// What you want to do after the event
+            writeOptions(4)
+            }
         break;
 
         case 2:
